@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+:root {
+	/* Fonts */
+	--ff-base: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Helvetica Neue", sans-serif;
+	--ff-other: "Poppins", Arial, Helvetica, sans-serif;
+	--fw-500: 500;
+	--fw-600: 600;
+	--fw-700: 700;
+	--fs-300: 1rem;
+	--fs-400: 1.125rem;
+	--fs-500: 2rem; /* Logo */
+	--fs-600: 2.5rem;
+
+	--spacer: 1.5em;
+}
+
+@media screen and (min-width: 40.5em) {
+	:root {
+		--fs-300: 1.125rem;
+		--fs-500: 2.25rem;
+		--fs-600: 4rem;
+
+		--spacer: 2em;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+	scroll-behavior: smooth;
+}
+
+body,
+div,
+h1,
+p,
+button,
+span {
+	margin: 0;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+ul[class]{
+	list-style: none;
+	margin: 0;
+}
+
+a:link,
+a:visited {
+	display: inline-block;
+	text-decoration: none;
+}
+
+button{
+	font: inherit;
+}
+
+
+body {
+	font-family: var(--ff-base);
+	font-size: var(--fs-300);
+	font-weight: var(500);
+	line-height: 1.5;
+	text-align: center;
+	color: #fff;
+	background: rgba(20, 20, 20, 1);
+}
+
+h1
+{
+	line-height: 1;
+}
+
+.container {
+	max-width: 75em;
+	width: 90%;
+	margin: 0 auto;
+	position: relative;
+}
+
+h1 {
+	font-size: var(--fs-600);
+	font-weight: var(--fw-700);
+	line-height: 1.1;
+}
+
+p {
+	font-size: var(--fs-300);
+	color: rgba(175, 175, 175, 1);
+}
+
+.nav-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 1em 0 2em;
+	position: relative;
+	margin-bottom: 4rem;
+}
+
+.logo a {
+	font-size: var(--fs-500);
+	font-weight: var(--fw-700);
+	color: rgba(255, 255, 255, 1);
+}
+
+.ham-button {
+	cursor: pointer;
+}
+
+nav {
+	flex-basis: 100%;
+	font-size: var(--fs-400);
+	background: rgba(56, 71, 214, 1);
+	border-radius: 5px;
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	transform: translateY(-500%);
+	transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+nav.open {
+	transform: translateY(0);
+    
+}
+
+.nav-bar-list {
+	display: flex;
+	flex-direction: column;
+	padding: 1em 1em 0;
+}
+
+.nav-bar-list li {
+	margin: 0.25em 0;
+}
+
+.nav-bar-list a {
+	color: rgba(255, 255, 255, 1);
+}
+.nav-bar-list a:hover,
+.nav-bar-list a:focus {
+	color: rgba(175, 175, 175, 1);
+}
+
+.dash-button {
+	padding: 1em;
+}
+
+.dash-button button {
+	background: rgba(35, 35, 35, 1);
+	color: rgba(255, 255, 255, 1);
+	border: none;
+	border-radius: 5px;
+	padding: 0.5em 1em;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.dash-button button:hover,
+.dash-button button:focus {
+	color: rgba(175, 175, 175, 1);
+	transform: scale(1.1);
+}
+
+.text-box {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 3em;
+}
+
+.text-box-content > * + * {
+	margin-top: 3em;
+    
+}
+
+.text-box-content h1 {
+	color: rgba(255, 255, 255, 1);
+}
+
+.text-box-content span {
+	display: block;
+	background: linear-gradient(270deg, #a5d9ff 7.6%, #7399fb 94.15%);
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.text-box-content p {
+	max-width: 40em;
+	margin-inline: auto;
+}
+
+.text-box-content a {
+	color: rgba(255, 255, 255, 1);
+	background: rgba(31, 3, 216, 1);
+	padding: 0.75em 2em;
+	font-size: var(--fs-400);
+	border-radius: 5px;
+	transition: all 0.3s; 
+}
+
+.text-box-content a:hover,
+.text-box-content a:focus {
+	transform: scale(1.1);
+}
+
+.text-box-image {
+	display: flex;
+	justify-content: center;
+}
+
+.back-gr {
+	position: absolute;
+	background: rgba(64, 79, 215, 1);
+	border-radius: 50%;
+	filter: blur(10rem);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 20rem;
+	height: 20rem;
+	z-index: -2;
+}
+
+@media screen and (min-width: 50em) {
+	.ham-button {
+		display: none;
+	}
+
+	nav {
+		flex-basis: 68%;
+		position: static;
+		transform: translateY(0);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background: transparent;
+	}
+
+	.nav-bar-list {
+		flex-direction: row;
+		padding: 0;
+		gap: 3em;
+	}
+
+	.bg {
+		width: 35rem;
+		height: 35rem;
+		filter: blur(15rem);
+		transform: translate(-75%, -50%);
+	}
+}
